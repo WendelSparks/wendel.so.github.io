@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wendel Soares</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f6f8;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-top: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion {
+    background: #eee;
+    cursor: pointer;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.panel {
+    display: none;
+    padding: 10px;
+    background: #fafafa;
+}
+
+.current {
+    background: #e3f2fd;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Wendel Soares</h1>
+<p><strong>Engenheiro de Dados</strong></p>
+<p>Belo Horizonte | wendelsparks13@gmail.com</p>
+
+<h2>Experiência Atual</h2>
+<div class="current">
+<p><strong>Banco Mercantil</strong></p>
+<ul>
+<li>Riscos de TI e Cibersegurança</li>
+<li>Dashboards e análise de dados</li>
+<li>SQL, Snowflake e Power BI</li>
+</ul>
+</div>
+
+<h2>Experiências</h2>
+
+<button class="accordion">BAMIN</button>
+<div class="panel">
+<p>Planejamento, SAP, Power BI, análise de riscos</p>
+</div>
+
+<button class="accordion">Tellus</button>
+<div class="panel">
+<p>Técnico de planejamento</p>
+</div>
+
+<button class="accordion">Chatti Engenharia</button>
+<div class="panel">
+<p>Acompanhamento de obra e execução</p>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".accordion").forEach(btn => {
+    btn.addEventListener("click", () => {
+        let panel = btn.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+});
+</script>
+
+</body>
+</html>
