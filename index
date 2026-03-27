@@ -1,0 +1,103 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CurriculoGenerator {
+
+    public static void main(String[] args) {
+        String html = """
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Currículo - Wendel</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 40px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.accordion {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+
+.panel {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Wendel Soares</h1>
+<p>Engenheiro Especialista em Dados</p>
+
+<div class="section">
+<h2>Experiência Atual</h2>
+<p><strong>Banco Mercantil</strong></p>
+<p>Assistente em Riscos de TI...</p>
+</div>
+
+<div class="section">
+<h2>Experiências Anteriores</h2>
+
+<button class="accordion">BAMIN</button>
+<div class="panel">
+<p>Planejamento, SAP, Power BI...</p>
+</div>
+
+<button class="accordion">Tellus Company</button>
+<div class="panel">
+<p>Técnico de planejamento...</p>
+</div>
+
+<button class="accordion">Chatti Engenharia</button>
+<div class="panel">
+<p>Execução de obra, reuniões...</p>
+</div>
+
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+}
+</script>
+
+</body>
+</html>
+""";
+
+        try {
+            FileWriter writer = new FileWriter("curriculo.html");
+            writer.write(html);
+            writer.close();
+            System.out.println("Currículo gerado!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
