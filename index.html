@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wendel Soares · Engenheiro de Dados</title>
+    <!-- Favicon: ícone de engenharia (gear) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a6f9f'%3E%3Cpath d='M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* (todo o CSS permanece igual ao da versão anterior) */
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +32,6 @@
             overflow: hidden;
         }
 
-        /* header area */
         .profile-header {
             background: linear-gradient(135deg, #0f2b3d 0%, #1a4a6f 100%);
             padding: 2.5rem 3rem;
@@ -73,12 +75,10 @@
             text-decoration: underline;
         }
 
-        /* main content */
         .content {
             padding: 2rem 2.5rem;
         }
 
-        /* seções */
         section {
             margin-bottom: 2.5rem;
         }
@@ -102,7 +102,6 @@
             margin-bottom: 1rem;
         }
 
-        /* badges skills & certs */
         .badge-grid {
             display: flex;
             flex-wrap: wrap;
@@ -119,7 +118,6 @@
             font-weight: 500;
         }
 
-        /* timeline do banco mercantil (estilo linkedin) */
         .timeline-block {
             background: #ffffff;
             border-radius: 24px;
@@ -229,7 +227,6 @@
             color: #1f6392;
         }
 
-        /* outros acordeões (demais experiências) */
         .accordion {
             background-color: #f8fafc;
             cursor: pointer;
@@ -288,6 +285,52 @@
             color: #6c86a3;
         }
 
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e6f9f;
+            text-decoration: none;
+            margin-left: 0.75rem;
+            transition: 0.2s;
+        }
+
+        .cert-link i {
+            font-size: 0.7rem;
+        }
+
+        .cert-link:hover {
+            background: #e0e7ff;
+            text-decoration: underline;
+        }
+
+        .education-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.8rem;
+        }
+
+        .education-title {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .education-detail {
+            color: #4a627a;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
         hr {
             margin: 1rem 0;
             border: none;
@@ -332,17 +375,40 @@
             </div>
         </section>
 
-        <!-- FORMAÇÃO ACADÊMICA (mais acima) -->
+        <!-- FORMAÇÃO ACADÊMICA (com links) -->
         <section>
             <div class="section-title">Formação acadêmica</div>
-            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
                 <div>
-                    <div style="font-weight: 700;">Pós-graduação Lato Sensu em Engenharia de Dados</div>
-                    <div style="color: #4a627a;">Dom Helder Escola Superior · fev/2023 – out/2024</div>
+                    <div class="education-title">
+                        Pós-graduação Lato Sensu em Engenharia de Dados
+                        <a href="https://web.sistemas.pucminas.br/GAD/DOC/Verificador/Consulta/96E8F5FFC23AFCBB39CA7E1BD83D5AF6" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver certificado</a>
+                    </div>
+                    <div class="education-detail">PUC Minas · fev/2023 – out/2024</div>
                 </div>
                 <div>
-                    <div style="font-weight: 700;">Bacharelado em Engenharia Civil</div>
-                    <div style="color: #4a627a;">Dom Helder Escola Superior · 2018 – 2022</div>
+                    <div class="education-title">
+                        Bacharelado em Engenharia Civil
+                        <a href="https://dd.diplomax.cloud/?CodigoValidacao=2849.2849.1d643e105276" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver diploma</a>
+                    </div>
+                    <div class="education-detail">Dom Helder Escola Superior · 2018 – 2022</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPECIALIZAÇÕES E CURSOS COMPLEMENTARES -->
+        <section>
+            <div class="section-title">Especializações e cursos complementares</div>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <div class="education-title">
+                        Especialização em Gerenciamento de Projetos e Construção
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/PRFHHU8JQ3LD" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> Ver certificado</a>
+                    </div>
+                    <div class="education-detail">Columbia University (parceria UFMG) · 2022</div>
+                    <div style="font-size: 0.9rem; color: #2c3e4e; margin-top: 0.4rem;">
+                        Especialização focada em gestão de projetos aplicada à engenharia e construção, abordando metodologias ágeis, planejamento estratégico, controle de custos e riscos. Os princípios de governança e gerenciamento são totalmente transferíveis para projetos de tecnologia, dados e transformação digital.
+                    </div>
                 </div>
             </div>
         </section>
@@ -362,9 +428,9 @@
             </div>
         </section>
 
-        <!-- Certificações -->
+        <!-- Certificações técnicas -->
         <section>
-            <div class="section-title">Certificações</div>
+            <div class="section-title">Certificações técnicas</div>
             <div class="badge-grid">
                 <span class="badge">Construction Scheduling</span>
                 <span class="badge">Construction Finance</span>
@@ -386,7 +452,6 @@
                     </div>
                 </div>
 
-                <!-- Primeiro período: início na área -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">nov 2023 – nov 2025 · 2 anos e 1 mês</div>
@@ -409,7 +474,6 @@
                     </div>
                 </div>
 
-                <!-- Segundo período: assistente com foco em dados e base de perdas -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">nov 2025 – Presente · 5 meses</div>
