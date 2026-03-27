@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wendel Soares - Engenheiro de Dados</title>
+    <title>Wendel Soares · Engenheiro de Dados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,118 +13,248 @@
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6f8;
+            background: #eef2f5;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
-            color: #1e2a3a;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 0 auto;
             background: white;
-            padding: 35px 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            color: #0a2942;
+        /* header area */
+        .profile-header {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1a4a6f 100%);
+            padding: 2.5rem 3rem;
+            color: white;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
+        .profile-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-header .title {
+            font-size: 1.3rem;
             font-weight: 500;
-            color: #2c7da0;
-            margin-bottom: 15px;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
 
-        .contact-info {
-            background: #eef2f5;
-            padding: 12px 18px;
-            border-radius: 10px;
-            margin: 15px 0 20px 0;
+        .contact-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.95rem;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
         }
 
-        .contact-info span {
+        .contact-bar a, .contact-bar span {
+            color: white;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
         }
 
-        .contact-info a {
-            color: #1e6f9f;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
+        .contact-bar a:hover {
+            opacity: 1;
             text-decoration: underline;
         }
 
-        h2 {
+        /* main content */
+        .content {
+            padding: 2rem 2.5rem;
+        }
+
+        /* seções */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
             font-size: 1.6rem;
-            margin: 30px 0 15px 0;
-            border-bottom: 2px solid #cbd5e1;
-            padding-bottom: 6px;
-            color: #0f3b5c;
+            font-weight: 600;
+            border-left: 5px solid #1a6f9f;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #0f2b3d;
         }
 
         .summary {
-            background: #f9fafb;
-            padding: 18px;
-            border-left: 4px solid #2c7da0;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-style: italic;
+            background: #f8fafc;
+            padding: 1.2rem 1.5rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
         }
 
-        .skills-list, .cert-list {
+        /* badges skills & certs */
+        .badge-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 10px;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
         }
 
-        .skill-badge, .cert-badge {
-            background: #e9ecef;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.9rem;
+        .badge {
+            background: #eef2ff;
+            color: #1e4a76;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: #1e4663;
         }
 
+        /* timeline do banco mercantil (estilo linkedin) */
+        .timeline-block {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e9edf2;
+            padding: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 0.8rem;
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background: #eef2ff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #1e6f9f;
+        }
+
+        .company-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .company-info p {
+            color: #4b6a8b;
+            font-size: 0.85rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background: #2c7da0;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #e2e8f0;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #2c7da0;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: #2c3e4e;
+            font-size: 0.95rem;
+        }
+
+        .timeline-desc ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-tag {
+            background: #f1f5f9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #1f6392;
+        }
+
+        /* outros acordeões (demais experiências) */
         .accordion {
-            background-color: #f1f5f9;
-            color: #0f3b5c;
+            background-color: #f8fafc;
             cursor: pointer;
-            padding: 14px 18px;
+            padding: 1rem 1.2rem;
             width: 100%;
             text-align: left;
-            border: none;
+            border: 1px solid #e2e8f0;
             outline: none;
             transition: 0.2s;
-            margin-top: 12px;
-            font-size: 1.05rem;
+            border-radius: 18px;
+            margin-top: 0.8rem;
             font-weight: 600;
-            border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .accordion:hover {
-            background-color: #e2e8f0;
+            background-color: #eef2ff;
         }
 
         .accordion:after {
-            content: '▼';
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             font-size: 0.8rem;
             transition: transform 0.2s;
         }
@@ -134,206 +265,231 @@
 
         .panel {
             display: none;
-            padding: 16px 20px;
+            padding: 1rem 1.2rem;
             background-color: #ffffff;
-            border-radius: 0 0 12px 12px;
-            border-left: 3px solid #2c7da0;
-            margin-bottom: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-radius: 18px;
+            border: 1px solid #e9edf2;
+            border-top: none;
+            margin-top: -6px;
+            margin-bottom: 0.8rem;
         }
 
-        .panel p {
-            margin: 8px 0;
+        .job-header {
+            margin-bottom: 0.8rem;
         }
 
         .job-title {
             font-weight: 700;
-            color: #1e6f9f;
-            margin-bottom: 6px;
+            color: #1a4a6f;
         }
 
         .job-date {
-            font-size: 0.85rem;
-            color: #5a6e7c;
-            margin-bottom: 10px;
-        }
-
-        .job-desc {
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-
-        .job-desc li {
-            margin-bottom: 5px;
-        }
-
-        .education-item {
-            margin-bottom: 18px;
-            padding-left: 12px;
-            border-left: 3px solid #cbd5e1;
-        }
-
-        .education-title {
-            font-weight: 700;
-            font-size: 1.05rem;
-        }
-
-        .education-detail {
-            color: #475569;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            color: #6c86a3;
         }
 
         hr {
-            margin: 20px 0;
+            margin: 1rem 0;
             border: none;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #eef2f8;
         }
 
-        @media (max-width: 700px) {
-            .container {
-                padding: 20px;
-                margin: 20px;
+        @media (max-width: 680px) {
+            .profile-header {
+                padding: 1.5rem;
             }
-            .contact-info {
-                flex-direction: column;
-                gap: 8px;
+            .profile-header h1 {
+                font-size: 2rem;
+            }
+            .content {
+                padding: 1.2rem;
+            }
+            .timeline-item {
+                padding-left: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Wendel Soares</h1>
-    <div class="subtitle">Engenheiro Especialista em Dados</div>
-
-    <div class="contact-info">
-        <span>📍 Belo Horizonte, MG</span>
-        <span>📞 (31) 99120-5074</span>
-        <span>✉️ <a href="mailto:wendelsparks13@gmail.com">wendelsparks13@gmail.com</a></span>
-        <span>🔗 <a href="https://www.linkedin.com/in/wendelsparks" target="_blank">linkedin.com/in/wendelsparks</a></span>
+    <div class="profile-header">
+        <h1>Wendel Soares</h1>
+        <div class="title">Engenheiro Especialista em Dados</div>
+        <div class="contact-bar">
+            <span><i class="fas fa-map-marker-alt"></i> Belo Horizonte, MG</span>
+            <a href="tel:+5531991205074"><i class="fas fa-phone-alt"></i> (31) 99120-5074</a>
+            <a href="mailto:wendelsparks13@gmail.com"><i class="far fa-envelope"></i> wendelsparks13@gmail.com</a>
+            <a href="https://www.linkedin.com/in/wendelsparks" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/wendelsparks</a>
+        </div>
     </div>
 
-    <h2>Resumo</h2>
-    <div class="summary">
-        Sou uma pessoa muito proativa e dedicada. Com a minha experiência tento sempre melhorar qualquer empreitada em que me envolvo. E por amar tanto a minha profissão garanto que ao trabalhar não haverá arrependimentos.
-    </div>
+    <div class="content">
+        <!-- Resumo -->
+        <section>
+            <div class="section-title">Sobre</div>
+            <div class="summary">
+                Profissional proativo e dedicado, com experiência em riscos de TI, engenharia de dados e análise estratégica. Atuo na interseção entre tecnologia, dados e governança, desenvolvendo soluções analíticas e automações que geram valor para o negócio. Combinando vivência em SQL, Snowflake, Power BI e ACL Analytics, entrego insights relevantes e contribuo para a gestão de riscos e continuidade de negócios.
+            </div>
+        </section>
 
-    <h2>Principais competências</h2>
-    <div class="skills-list">
-        <span class="skill-badge">Google Cloud Platform (GCP)</span>
-        <span class="skill-badge">Computação em nuvem</span>
-        <span class="skill-badge">Aplicativos em nuvem</span>
-        <span class="skill-badge">SQL & Snowflake</span>
-        <span class="skill-badge">Power BI & Looker Studio</span>
-        <span class="skill-badge">Azure DevOps</span>
-        <span class="skill-badge">Análise de dados</span>
-    </div>
+        <!-- FORMAÇÃO ACADÊMICA (mais acima) -->
+        <section>
+            <div class="section-title">Formação acadêmica</div>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <div>
+                    <div style="font-weight: 700;">Pós-graduação Lato Sensu em Engenharia de Dados</div>
+                    <div style="color: #4a627a;">Dom Helder Escola Superior · fev/2023 – out/2024</div>
+                </div>
+                <div>
+                    <div style="font-weight: 700;">Bacharelado em Ciência da Computação</div>
+                    <div style="color: #4a627a;">Centro Universitário Una · 2023 – 2027 (em andamento)</div>
+                </div>
+                <div>
+                    <div style="font-weight: 700;">Bacharelado em Engenharia Civil</div>
+                    <div style="color: #4a627a;">Dom Helder Escola Superior · 2018 – 2022</div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Certificações</h2>
-    <div class="cert-list">
-        <span class="cert-badge">Construction Scheduling</span>
-        <span class="cert-badge">Construction Finance</span>
-        <span class="cert-badge">Construction Management (Especialização)</span>
-        <span class="cert-badge">Construction Project Management</span>
-        <span class="cert-badge">The Construction Industry: The Way Forward</span>
-    </div>
+        <!-- Competências principais -->
+        <section>
+            <div class="section-title">Competências principais</div>
+            <div class="badge-grid">
+                <span class="badge">SQL & Snowflake</span>
+                <span class="badge">Power BI / Looker Studio</span>
+                <span class="badge">ACL Analytics</span>
+                <span class="badge">Python para automação</span>
+                <span class="badge">Google Cloud Platform (GCP)</span>
+                <span class="badge">Azure DevOps</span>
+                <span class="badge">Análise de riscos (ITGC)</span>
+                <span class="badge">Modelagem de dados</span>
+            </div>
+        </section>
 
-    <h2>Experiências</h2>
+        <!-- Certificações -->
+        <section>
+            <div class="section-title">Certificações</div>
+            <div class="badge-grid">
+                <span class="badge">Construction Scheduling</span>
+                <span class="badge">Construction Finance</span>
+                <span class="badge">Construction Management (Especialização)</span>
+                <span class="badge">Construction Project Management</span>
+                <span class="badge">The Construction Industry: The Way Forward</span>
+            </div>
+        </section>
 
-    <!-- Banco Mercantil - Assistente (2025-Presente) -->
-    <button class="accordion">Banco Mercantil – Assistente em Riscos de TI, Cibersegurança e Continuidade</button>
-    <div class="panel">
-        <div class="job-title">Assistente em Riscos de TI, Cibersegurança e Gestão de Continuidade de Negócios</div>
-        <div class="job-date">novembro de 2025 – Presente (5 meses) | Belo Horizonte, MG</div>
-        <ul class="job-desc">
-            <li>Projetos de ITGC, auditorias internas e mapeamento de riscos de TI.</li>
-            <li>Elaboração e execução de testes em controles de privacidade, segurança cibernética e TI.</li>
-            <li>Desenvolvimento de dashboards e relatórios gerenciais utilizando Power BI, Excel, Google App Sheets e Looker Studio.</li>
-            <li>Análise de dados para identificação de tendências, padrões e insights significativos.</li>
-            <li>Monitoramento de KPIs e avaliação de resultados.</li>
-            <li>Utilização de Snowflake (data lake), SQL e Azure DevOps.</li>
-        </ul>
-    </div>
+        <!-- EXPERIÊNCIA BANCO MERCANTIL (unificada com timeline) -->
+        <section>
+            <div class="section-title">Experiência</div>
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="company-logo"><i class="fas fa-university"></i></div>
+                    <div class="company-info">
+                        <h3>Banco Mercantil</h3>
+                        <p>Riscos de TI, Cibersegurança e Continuidade de Negócios</p>
+                    </div>
+                </div>
 
-    <!-- Banco Mercantil - Cargo anterior (2023-2025) -->
-    <button class="accordion">Banco Mercantil – Riscos de TI, Cibersegurança e Continuidade</button>
-    <div class="panel">
-        <div class="job-title">Riscos de TI, Cibersegurança e Gestão de Continuidade de Negócios</div>
-        <div class="job-date">novembro de 2023 – novembro de 2025 (2 anos e 1 mês) | Belo Horizonte, MG</div>
-        <ul class="job-desc">
-            <li>Atuação em segurança cibernética básica, projetos de ITGC e auditorias internas.</li>
-            <li>Mapeamento de riscos de TI e execução de testes em controles de privacidade e segurança.</li>
-            <li>Criação de dashboards gerenciais e apoio na análise de dados com ferramentas como Power BI, Excel e Looker Studio.</li>
-            <li>Utilização de Snowflake e SQL para extração e análise de dados.</li>
-            <li>Participação em reuniões de diretoria e acompanhamento de ações estratégicas.</li>
-        </ul>
-    </div>
+                <!-- Primeiro período: início na área -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">nov 2023 – nov 2025 · 2 anos e 1 mês</div>
+                    <div class="timeline-title">Analista de Riscos de TI e Cibersegurança</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Atuação em projetos ITGC, auditorias internas e mapeamento de riscos de TI.</li>
+                            <li>Elaboração e execução de testes em controles de privacidade e segurança cibernética.</li>
+                            <li>Construção de dashboards gerenciais com Power BI, Looker Studio e Excel para monitoramento de KPIs de riscos.</li>
+                            <li>Utilização intensiva de Snowflake (data lake) e SQL para extração, transformação e análise de dados corporativos.</li>
+                            <li>Automação de relatórios utilizando scripts em Python e integração com Azure DevOps.</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Snowflake</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">ITGC</span>
+                            <span class="tech-tag">Azure DevOps</span>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Chatti Engenharia -->
-    <button class="accordion">Chatti Engenharia Ltda.</button>
-    <div class="panel">
-        <div class="job-title">Auxiliar em Engenharia Civil</div>
-        <div class="job-date">fevereiro de 2021 – abril de 2021 (3 meses) | Belo Horizonte, MG</div>
-        <ul class="job-desc">
-            <li>Medições e negociações com empreiteiros.</li>
-            <li>Acompanhamento de execução de edifício conforme planejamento inicial.</li>
-            <li>Condução de reuniões de planejamento semanal e mensal.</li>
-            <li>Supervisão da execução conforme normas técnicas e orientações de projetos.</li>
-            <li>Esclarecimento de dúvidas de funcionários sobre projetos executivos, levantamento de materiais e pedidos de compras.</li>
-            <li>Contato com projetistas e coleta de orçamentos.</li>
-            <li>Fiscalização de cumprimento das normas de segurança do trabalho.</li>
-            <li>Acompanhamento de modificações solicitadas por proprietários, elaboração de orçamentos e programação de concretagem.</li>
-            <li>Acompanhamento de baixa de construção e AVCB junto ao Corpo de Bombeiros.</li>
-        </ul>
-    </div>
+                <!-- Segundo período: assistente com foco em dados e base de perdas -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">nov 2025 – Presente · 5 meses</div>
+                    <div class="timeline-title">Assistente em Riscos de TI, Cibersegurança e Dados</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li><strong>Base de perdas:</strong> responsável pela consolidação, tratamento e análise de dados de perdas operacionais, desenvolvendo relatórios executivos e indicadores para a área de riscos.</li>
+                            <li>Utilização de <strong>ACL Analytics</strong> para testes de auditoria contínua e análise de grandes volumes de dados transacionais.</li>
+                            <li>Criação de automações em SQL e Python para integração entre Snowflake, planilhas e ferramentas de BI.</li>
+                            <li>Modelagem de dashboards interativos no Power BI que auxiliam na tomada de decisão sobre apetite a risco e controles internos.</li>
+                            <li>Participação em projetos de melhoria da qualidade dos dados de risco operacional e modelagem de indicadores de cibersegurança.</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">ACL Analytics</span>
+                            <span class="tech-tag">Base de Perdas</span>
+                            <span class="tech-tag">Automação Python</span>
+                            <span class="tech-tag">Data Lake</span>
+                            <span class="tech-tag">Governança de Dados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Crea-Minas Jr -->
-    <button class="accordion">Crea-Minas Jr – Núcleo Belo Horizonte</button>
-    <div class="panel">
-        <div class="job-title">Assessor de Gestão de Pessoas</div>
-        <div class="job-date">setembro de 2020 – fevereiro de 2021 (6 meses) | Belo Horizonte, MG</div>
-        <ul class="job-desc">
-            <li>Captação e estruturação de eventos voltados a estudantes, recém‑formados e profissionais vinculados ao sistema CONFEA/CREA.</li>
-            <li>Suporte na qualificação e desempenho da equipe interna por meio de capacitações e feedbacks estruturados.</li>
-            <li>Interlocução entre membros do núcleo e mercado de trabalho, levantamento de banco de dados com contatos de empresas para ofertas de estágios.</li>
-            <li>Estruturação de processos seletivos internos e desligamentos de membros.</li>
-        </ul>
-    </div>
+        <!-- OUTRAS EXPERIÊNCIAS (acordeão) -->
+        <section>
+            <div class="section-title">Outras experiências profissionais</div>
 
-    <!-- CREA-MG Gerência Técnica -->
-    <button class="accordion">CREA – MG (Gerência Técnica e de Fiscalização)</button>
-    <div class="panel">
-        <div class="job-title">Apoio técnico e fiscalização</div>
-        <div class="job-date">março de 2020 – fevereiro de 2021 (1 ano) | Belo Horizonte, MG</div>
-        <ul class="job-desc">
-            <li>Atuação em atividades relacionadas à fiscalização do exercício profissional.</li>
-            <li>Suporte em processos técnicos e administrativos da gerência.</li>
-            <li>Experiência complementar em rotinas de órgão de classe, contribuindo para o fortalecimento da engenharia e áreas afins.</li>
-        </ul>
-    </div>
+            <button class="accordion">Chatti Engenharia Ltda.</button>
+            <div class="panel">
+                <div class="job-header">
+                    <div class="job-title">Auxiliar em Engenharia Civil</div>
+                    <div class="job-date">fev 2021 – abr 2021 (3 meses)</div>
+                </div>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Medições e negociações com empreiteiros, acompanhamento de execução de edifício.</li>
+                    <li>Condução de reuniões de planejamento semanal/mensal, supervisão de normas técnicas.</li>
+                    <li>Elaboração de orçamentos, programação de concretagem, acompanhamento de AVCB e baixa de construção.</li>
+                </ul>
+            </div>
 
-    <h2>Formação acadêmica</h2>
-    <div class="education-item">
-        <div class="education-title">Pós-graduação Lato Sensu em Engenharia de Dados</div>
-        <div class="education-detail">Dom Helder Escola Superior · fevereiro de 2023 – outubro de 2024</div>
-    </div>
-    <div class="education-item">
-        <div class="education-title">Bacharelado em Engenharia Civil</div>
-        <div class="education-detail">Dom Helder Escola Superior · 2018 – 2022</div>
-    </div>
-    <div class="education-item">
-        <div class="education-title">Bacharelado em Ciência da Computação (em andamento)</div>
-        <div class="education-detail">Centro Universitário Una · 2023 – 2027</div>
-    </div>
+            <button class="accordion">Crea-Minas Jr – Núcleo BH</button>
+            <div class="panel">
+                <div class="job-header">
+                    <div class="job-title">Assessor de Gestão de Pessoas</div>
+                    <div class="job-date">set 2020 – fev 2021 (6 meses)</div>
+                </div>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Estruturação de eventos para estudantes e profissionais do sistema CONFEA/CREA.</li>
+                    <li>Capacitações internas, feedbacks estruturados e interlocução com o mercado de trabalho.</li>
+                    <li>Levantamento de banco de dados de empresas e apoio em processos seletivos internos.</li>
+                </ul>
+            </div>
 
-    <hr>
-    <div style="font-size: 0.8rem; text-align: center; color: #5e7a93; margin-top: 20px;">
-        Currículo atualizado em março de 2026
+            <button class="accordion">CREA-MG – Gerência Técnica e de Fiscalização</button>
+            <div class="panel">
+                <div class="job-header">
+                    <div class="job-title">Apoio Técnico</div>
+                    <div class="job-date">mar 2020 – fev 2021 (1 ano)</div>
+                </div>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Atuação em rotinas de fiscalização do exercício profissional e suporte a processos técnicos.</li>
+                    <li>Experiência complementar em órgão de classe, fortalecendo visão regulatória e de governança.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr />
+        <div style="font-size: 0.75rem; text-align: center; color: #8ba0b5; padding: 1rem 0 0.5rem 0;">
+            <i class="fas fa-sync-alt"></i> Atualizado em março de 2026
+        </div>
     </div>
 </div>
 
 <script>
-    // Controle dos acordeões
+    // Controle dos acordeões para as outras experiências
     const accordions = document.querySelectorAll(".accordion");
     accordions.forEach(btn => {
         btn.addEventListener("click", function() {
